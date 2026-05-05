@@ -51,6 +51,14 @@ dotai/
 │       └── frontend/
 │           └── SKILL.md            # /frontend — diseña el contrato de API para el frontend
 │
+├── infographics/                   # Infografías del proyecto en SVG y PNG 4K
+│   ├── ecosistema.svg / .png       # Mapa completo de todos los componentes
+│   ├── ciclo_de_vida.svg / .png    # Ciclo de vida de una sesión de Claude Code
+│   ├── agentes.svg / .png          # Los 8 agentes con modelo, herramientas y proceso
+│   ├── gen_infografia1.py          # Script generador — ecosistema
+│   ├── gen_infografia2.py          # Script generador — ciclo de vida
+│   └── gen_infografia3.py          # Script generador — agentes
+│
 ├── .gitignore
 └── README.md
 ```
@@ -216,6 +224,36 @@ Las skills son flujos de trabajo reutilizables invocados como slash commands. A 
 
 - **`SKILL.md` (raíz)** — Plantilla y guía para crear nuevas skills: formato del frontmatter, cómo estructurar los pasos, convenciones de nomenclatura.
 - **`context.md`** — Contexto compartido inyectado en todas las skills: stack tecnológico, estructura de paquetes, tabla de nomenclatura completa, reglas de dependencia entre capas, contratos fijos (envelope, `ProblemDetail`), comandos Maven frecuentes y archivos clave a leer antes de implementar.
+
+---
+
+## `infographics/`
+
+Infografías del proyecto generadas con Python + Inkscape. Disponibles en formato SVG (vectorial, editable) y PNG a resolución 4K (3840 px de ancho).
+
+| Archivo | Resolución | Contenido |
+|---|---|---|
+| `ecosistema` | 3840 × 2720 px | Mapa visual de los 6 tipos de componentes: agents, commands, hooks, rules, skills y archivos de configuración global |
+| `ciclo_de_vida` | 3840 × 2240 px | Las 5 fases de una sesión de trabajo con Claude Code, indicando qué hook, agente o comando se activa en cada momento |
+| `agentes` | 3840 × 2816 px | Los 8 agentes en detalle: modelo utilizado, herramientas disponibles, descripción y proceso paso a paso |
+
+### Regenerar las imágenes
+
+Los scripts Python son la fuente de verdad. Si modificas agentes, hooks o cualquier componente, regenera las infografías con:
+
+```bash
+cd infographics
+python3 gen_infografia1.py   # ecosistema.svg
+python3 gen_infografia2.py   # ciclo_de_vida.svg
+python3 gen_infografia3.py   # agentes.svg
+
+# Exportar a PNG 4K con Inkscape
+inkscape ecosistema.svg    --export-type=png --export-filename=ecosistema.png    --export-width=3840
+inkscape ciclo_de_vida.svg --export-type=png --export-filename=ciclo_de_vida.png --export-width=3840
+inkscape agentes.svg       --export-type=png --export-filename=agentes.png       --export-width=3840
+```
+
+> **Requisitos:** Python 3, Inkscape 1.x. Los SVG son editables directamente con Inkscape si necesitas ajustar colores, tipografía o layout sin tocar el código Python.
 
 ---
 
