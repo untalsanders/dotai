@@ -1,0 +1,121 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/PreToolUse.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .claude/hooks/PostToolUse.sh"
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"event\":\"session_start\"}' | bash .claude/hooks/SessionSmart.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo '{\"event\":\"session_end\"}' | bash .claude/hooks/SessionSmart.sh"
+          }
+        ]
+      }
+    ]
+  },
+
+  "permissions": {
+    "allow": [
+      "Bash(git status*)",
+      "Bash(git diff*)",
+      "Bash(git log*)",
+      "Bash(git branch*)",
+      "Bash(git show*)",
+      "Bash(git rev-parse*)",
+      "Bash(git rev-list*)",
+      "Bash(git stash list*)",
+      "Bash(git ls-files*)",
+
+      "Bash(find src/*)",
+      "Bash(find . -name*)",
+      "Bash(find . -path*)",
+      "Bash(grep -*)",
+      "Bash(ls*)",
+      "Bash(wc -*)",
+      "Bash(sort*)",
+      "Bash(head*)",
+      "Bash(tail*)",
+      "Bash(jq *)",
+
+      "Bash(./mvnw compile*)",
+      "Bash(./mvnw test*)",
+      "Bash(./mvnw verify*)",
+      "Bash(./mvnw flyway:info*)",
+      "Bash(./mvnw flyway:validate*)",
+      "Bash(./mvnw dependency:tree*)",
+      "Bash(./mvnw help:effective-pom*)",
+
+      "Bash(gh issue view*)",
+      "Bash(gh issue list*)",
+      "Bash(gh pr view*)",
+      "Bash(gh pr list*)",
+      "Bash(gh pr diff*)",
+      "Bash(gh pr checks*)",
+
+      "Bash(curl -s *)",
+      "Bash(curl -sf *)",
+      "Bash(curl -s -o /dev/null*)",
+
+      "Bash(docker ps*)",
+      "Bash(docker images*)",
+      "Bash(kubectl get*)",
+      "Bash(kubectl describe*)",
+      "Bash(kubectl logs*)",
+      "Bash(kubectl rollout status*)",
+
+      "Bash(lsof -i*)",
+      "Bash(ps aux*)"
+    ],
+    "deny": [
+      "Bash(git push*--force*)",
+      "Bash(git push*-f *)",
+      "Bash(git reset --hard*)",
+      "Bash(git clean -f*)",
+      "Bash(git branch -D*)",
+
+      "Bash(rm -rf src*)",
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf ~*)",
+      "Bash(rm -rf ..*)"
+    ]
+  },
+
+  "env": {
+    "SPRING_PROFILES_ACTIVE": "local",
+    "JAVA_TOOL_OPTIONS": "-Xmx2g -XX:+UseG1GC",
+    "MAVEN_OPTS": "-Xmx1g",
+    "TESTCONTAINERS_REUSE_ENABLE": "true"
+  }
+}
