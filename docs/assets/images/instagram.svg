@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1350" viewBox="0 0 1080 1350">
+<defs>
+  <linearGradient id="bgGrad" x1="0" y1="0" x2="0.5" y2="1">
+    <stop offset="0%"   stop-color="#0F0C29"/>
+    <stop offset="50%"  stop-color="#0D1117"/>
+    <stop offset="100%" stop-color="#0a0f1a"/>
+  </linearGradient>
+  <linearGradient id="titleGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#8B5CF6"/>
+    <stop offset="50%"  stop-color="#6366F1"/>
+    <stop offset="100%" stop-color="#06B6D4"/>
+  </linearGradient>
+  <linearGradient id="divGrad" x1="0" y1="0" x2="1" y2="0">
+    <stop offset="0%"   stop-color="#8B5CF6" stop-opacity="0"/>
+    <stop offset="30%"  stop-color="#8B5CF6"/>
+    <stop offset="70%"  stop-color="#06B6D4"/>
+    <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+  </linearGradient>
+  <filter id="glow">
+    <feGaussianBlur stdDeviation="8" result="blur"/>
+    <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+  </filter>
+</defs>
+<rect width="1080" height="1350" fill="url(#bgGrad)"/>
+<line x1="0" y1="0" x2="0" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="60" y1="0" x2="60" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="120" y1="0" x2="120" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="180" y1="0" x2="180" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="240" y1="0" x2="240" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="300" y1="0" x2="300" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="360" y1="0" x2="360" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="420" y1="0" x2="420" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="480" y1="0" x2="480" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="540" y1="0" x2="540" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="600" y1="0" x2="600" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="660" y1="0" x2="660" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="720" y1="0" x2="720" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="780" y1="0" x2="780" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="840" y1="0" x2="840" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="900" y1="0" x2="900" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="960" y1="0" x2="960" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="1020" y1="0" x2="1020" y2="1350" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="0" x2="1080" y2="0" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="60" x2="1080" y2="60" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="120" x2="1080" y2="120" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="180" x2="1080" y2="180" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="240" x2="1080" y2="240" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="300" x2="1080" y2="300" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="360" x2="1080" y2="360" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="420" x2="1080" y2="420" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="480" x2="1080" y2="480" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="540" x2="1080" y2="540" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="600" x2="1080" y2="600" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="660" x2="1080" y2="660" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="720" x2="1080" y2="720" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="780" x2="1080" y2="780" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="840" x2="1080" y2="840" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="900" x2="1080" y2="900" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="960" x2="1080" y2="960" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="1020" x2="1080" y2="1020" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="1080" x2="1080" y2="1080" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="1140" x2="1080" y2="1140" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="1200" x2="1080" y2="1200" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="1260" x2="1080" y2="1260" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<line x1="0" y1="1320" x2="1080" y2="1320" stroke="#ffffff" stroke-width="0.3" opacity="0.03"/>
+<ellipse cx="540" cy="100" rx="320" ry="120" fill="#6366F1" opacity="0.06"/>
+<text x="540" y="72" font-family="Ubuntu Nerd Font" font-size="20" font-weight="normal" fill="#6E7681" text-anchor="middle">Claude Code · Dotfiles</text>
+<text x="540" y="148" font-family="Ubuntu Nerd Font" font-size="96" font-weight="bold"
+  text-anchor="middle" fill="url(#titleGrad)" filter="url(#glow)">dotai</text>
+<text x="540" y="194" font-family="Ubuntu Nerd Font" font-size="24" font-weight="normal" fill="#8B949E" text-anchor="middle">Configura Claude Code como un Senior Engineer</text>
+<rect x="140" y="216" width="800" height="2" fill="url(#divGrad)" rx="1"/>
+<rect x="231" y="238" width="123" height="32" rx="16" fill="#6366F1" stroke="none" stroke-width="1.5" opacity="0.18"/><rect x="231" y="238" width="123" height="32" rx="16" fill="#6366F1" stroke="#6366F1" stroke-width="1.5" opacity="0.7"/><text x="292" y="259" font-family="Ubuntu Nerd Font" font-size="17" font-weight="bold" fill="#6366F1" text-anchor="middle">Java 21</text>
+<rect x="370" y="238" width="201" height="32" rx="16" fill="#8B5CF6" stroke="none" stroke-width="1.5" opacity="0.18"/><rect x="370" y="238" width="201" height="32" rx="16" fill="#8B5CF6" stroke="#8B5CF6" stroke-width="1.5" opacity="0.7"/><text x="470" y="259" font-family="Ubuntu Nerd Font" font-size="17" font-weight="bold" fill="#8B5CF6" text-anchor="middle">Spring Boot 3</text>
+<rect x="587" y="238" width="149" height="32" rx="16" fill="#06B6D4" stroke="none" stroke-width="1.5" opacity="0.18"/><rect x="587" y="238" width="149" height="32" rx="16" fill="#06B6D4" stroke="#06B6D4" stroke-width="1.5" opacity="0.7"/><text x="661" y="259" font-family="Ubuntu Nerd Font" font-size="17" font-weight="bold" fill="#06B6D4" text-anchor="middle">Hexagonal</text>
+<rect x="752" y="238" width="97" height="32" rx="16" fill="#10B981" stroke="none" stroke-width="1.5" opacity="0.18"/><rect x="752" y="238" width="97" height="32" rx="16" fill="#10B981" stroke="#10B981" stroke-width="1.5" opacity="0.7"/><text x="800" y="259" font-family="Ubuntu Nerd Font" font-size="17" font-weight="bold" fill="#10B981" text-anchor="middle">Maven</text>
+<rect x="70" y="302" width="300" height="242" rx="20" fill="#000" stroke="none" stroke-width="1.5" opacity="0.5"/><rect x="66" y="298" width="300" height="242" rx="20" fill="#161B22" stroke="#6366F1" stroke-width="2" opacity="1"/><rect x="66" y="298" width="300" height="6" rx="3" fill="#6366F1" stroke="none" stroke-width="1.5" opacity="1"/><circle cx="216" cy="350" r="30" fill="#6366F1" opacity="0.15"/><circle cx="216" cy="350" r="30" fill="none" stroke="#6366F1" stroke-width="2"/><text x="216" y="358" font-family="Ubuntu Nerd Font" font-size="26" font-weight="bold" fill="#6366F1" text-anchor="middle"></text><text x="216" y="402" font-family="Ubuntu Nerd Font" font-size="20" font-weight="bold" fill="#E6EDF3" text-anchor="middle">Agents</text><circle cx="88" cy="425" r="4" fill="#6366F1" opacity="0.8"/><text x="100" y="430" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">8 subagentes expertos</text><circle cx="88" cy="459" r="4" fill="#6366F1" opacity="0.8"/><text x="100" y="464" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">core-reviewer · debugger</text><circle cx="88" cy="493" r="4" fill="#6366F1" opacity="0.8"/><text x="100" y="498" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">security-auditor · explorer</text>
+<rect x="394" y="302" width="300" height="242" rx="20" fill="#000" stroke="none" stroke-width="1.5" opacity="0.5"/><rect x="390" y="298" width="300" height="242" rx="20" fill="#161B22" stroke="#10B981" stroke-width="2" opacity="1"/><rect x="390" y="298" width="300" height="6" rx="3" fill="#10B981" stroke="none" stroke-width="1.5" opacity="1"/><circle cx="540" cy="350" r="30" fill="#10B981" opacity="0.15"/><circle cx="540" cy="350" r="30" fill="none" stroke="#10B981" stroke-width="2"/><text x="540" y="358" font-family="Ubuntu Nerd Font" font-size="26" font-weight="bold" fill="#10B981" text-anchor="middle"></text><text x="540" y="402" font-family="Ubuntu Nerd Font" font-size="20" font-weight="bold" fill="#E6EDF3" text-anchor="middle">Commands</text><circle cx="412" cy="425" r="4" fill="#10B981" opacity="0.8"/><text x="424" y="430" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">/fix-issue — corrige issues</text><circle cx="412" cy="459" r="4" fill="#10B981" opacity="0.8"/><text x="424" y="464" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">/pr-review — revisa PRs</text><circle cx="412" cy="493" r="4" fill="#10B981" opacity="0.8"/><text x="424" y="498" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">/deploy — despliega la app</text>
+<rect x="718" y="302" width="300" height="242" rx="20" fill="#000" stroke="none" stroke-width="1.5" opacity="0.5"/><rect x="714" y="298" width="300" height="242" rx="20" fill="#161B22" stroke="#F59E0B" stroke-width="2" opacity="1"/><rect x="714" y="298" width="300" height="6" rx="3" fill="#F59E0B" stroke="none" stroke-width="1.5" opacity="1"/><circle cx="864" cy="350" r="30" fill="#F59E0B" opacity="0.15"/><circle cx="864" cy="350" r="30" fill="none" stroke="#F59E0B" stroke-width="2"/><text x="864" y="358" font-family="Ubuntu Nerd Font" font-size="26" font-weight="bold" fill="#F59E0B" text-anchor="middle"></text><text x="864" y="402" font-family="Ubuntu Nerd Font" font-size="20" font-weight="bold" fill="#E6EDF3" text-anchor="middle">Hooks</text><circle cx="736" cy="425" r="4" fill="#F59E0B" opacity="0.8"/><text x="748" y="430" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">PreToolUse · PostToolUse</text><circle cx="736" cy="459" r="4" fill="#F59E0B" opacity="0.8"/><text x="748" y="464" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">SessionSmart — memoria</text><circle cx="736" cy="493" r="4" fill="#F59E0B" opacity="0.8"/><text x="748" y="498" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">pre-commit — valida antes</text>
+<rect x="70" y="568" width="300" height="242" rx="20" fill="#000" stroke="none" stroke-width="1.5" opacity="0.5"/><rect x="66" y="564" width="300" height="242" rx="20" fill="#161B22" stroke="#06B6D4" stroke-width="2" opacity="1"/><rect x="66" y="564" width="300" height="6" rx="3" fill="#06B6D4" stroke="none" stroke-width="1.5" opacity="1"/><circle cx="216" cy="616" r="30" fill="#06B6D4" opacity="0.15"/><circle cx="216" cy="616" r="30" fill="none" stroke="#06B6D4" stroke-width="2"/><text x="216" y="624" font-family="Ubuntu Nerd Font" font-size="26" font-weight="bold" fill="#06B6D4" text-anchor="middle"></text><text x="216" y="668" font-family="Ubuntu Nerd Font" font-size="20" font-weight="bold" fill="#E6EDF3" text-anchor="middle">Rules</text><circle cx="88" cy="691" r="4" fill="#06B6D4" opacity="0.8"/><text x="100" y="696" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">architecture · api</text><circle cx="88" cy="725" r="4" fill="#06B6D4" opacity="0.8"/><text x="100" y="730" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">database · frontend</text><circle cx="88" cy="759" r="4" fill="#06B6D4" opacity="0.8"/><text x="100" y="764" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">Reglas por dominio técnico</text>
+<rect x="394" y="568" width="300" height="242" rx="20" fill="#000" stroke="none" stroke-width="1.5" opacity="0.5"/><rect x="390" y="564" width="300" height="242" rx="20" fill="#161B22" stroke="#EC4899" stroke-width="2" opacity="1"/><rect x="390" y="564" width="300" height="6" rx="3" fill="#EC4899" stroke="none" stroke-width="1.5" opacity="1"/><circle cx="540" cy="616" r="30" fill="#EC4899" opacity="0.15"/><circle cx="540" cy="616" r="30" fill="none" stroke="#EC4899" stroke-width="2"/><text x="540" y="624" font-family="Ubuntu Nerd Font" font-size="26" font-weight="bold" fill="#EC4899" text-anchor="middle"></text><text x="540" y="668" font-family="Ubuntu Nerd Font" font-size="20" font-weight="bold" fill="#E6EDF3" text-anchor="middle">Skills</text><circle cx="412" cy="691" r="4" fill="#EC4899" opacity="0.8"/><text x="424" y="696" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">/backend — feature completa</text><circle cx="412" cy="725" r="4" fill="#EC4899" opacity="0.8"/><text x="424" y="730" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">/frontend — contrato API</text><circle cx="412" cy="759" r="4" fill="#EC4899" opacity="0.8"/><text x="424" y="764" font-family="Ubuntu Nerd Font" font-size="16" font-weight="normal" fill="#8B949E" text-anchor="start">context · SKILL template</text>
+<rect x="70" y="842" width="948" height="116" rx="20" fill="#000" stroke="none" stroke-width="1.5" opacity="0.5"/>
+<rect x="66" y="838" width="948" height="116" rx="20" fill="#161B22" stroke="#8B5CF6" stroke-width="2" opacity="1"/>
+<rect x="66" y="838" width="948" height="6" rx="3" fill="#8B5CF6" stroke="none" stroke-width="1.5" opacity="1"/>
+<circle cx="122" cy="896" r="28" fill="#8B5CF6" opacity="0.15"/>
+<circle cx="122" cy="896" r="28" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+<text x="122" y="904" font-family="Ubuntu Nerd Font" font-size="24" font-weight="bold" fill="#8B5CF6" text-anchor="middle"></text>
+<text x="166" y="883" font-family="Ubuntu Nerd Font" font-size="22" font-weight="bold" fill="#E6EDF3" text-anchor="start">settings.json + CLAUDE.md</text>
+<text x="166" y="914" font-family="Ubuntu Nerd Font" font-size="17" font-weight="normal" fill="#8B949E" text-anchor="start">Permisos · Hooks · Variables de entorno · Instrucciones globales</text>
+<text x="540" y="994" font-family="Ubuntu Nerd Font" font-size="26" font-weight="bold" fill="#E6EDF3" text-anchor="middle">¿Cómo funciona?</text>
+<rect x="140" y="1008" width="800" height="1.5" fill="url(#divGrad)" rx="1" opacity="0.5"/>
+<circle cx="296" cy="1058" r="26" fill="#8B5CF6" opacity="0.15"/>
+<circle cx="296" cy="1058" r="26" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+<text x="296" y="1065" font-family="Ubuntu Nerd Font" font-size="22" font-weight="bold" fill="#8B5CF6" text-anchor="middle">1</text>
+<text x="418" y="1066" font-family="Ubuntu Nerd Font" font-size="22" fill="#6E7681" text-anchor="middle">→</text>
+<text x="296" y="1108" font-family="Ubuntu Nerd Font" font-size="20" font-weight="bold" fill="#E6EDF3" text-anchor="middle">Clona</text>
+<text x="296" y="1130" font-family="monospace" font-size="15" font-weight="normal" fill="#6E7681" text-anchor="middle">git clone dotai</text>
+<circle cx="540" cy="1058" r="26" fill="#8B5CF6" opacity="0.15"/>
+<circle cx="540" cy="1058" r="26" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+<text x="540" y="1065" font-family="Ubuntu Nerd Font" font-size="22" font-weight="bold" fill="#8B5CF6" text-anchor="middle">2</text>
+<text x="662" y="1066" font-family="Ubuntu Nerd Font" font-size="22" fill="#6E7681" text-anchor="middle">→</text>
+<text x="540" y="1108" font-family="Ubuntu Nerd Font" font-size="20" font-weight="bold" fill="#E6EDF3" text-anchor="middle">Enlaza</text>
+<text x="540" y="1130" font-family="monospace" font-size="15" font-weight="normal" fill="#6E7681" text-anchor="middle">ln -s .claude/ tu-proyecto/</text>
+<circle cx="784" cy="1058" r="26" fill="#8B5CF6" opacity="0.15"/>
+<circle cx="784" cy="1058" r="26" fill="none" stroke="#8B5CF6" stroke-width="2"/>
+<text x="784" y="1065" font-family="Ubuntu Nerd Font" font-size="22" font-weight="bold" fill="#8B5CF6" text-anchor="middle">3</text>
+<text x="784" y="1108" font-family="Ubuntu Nerd Font" font-size="20" font-weight="bold" fill="#E6EDF3" text-anchor="middle">Trabaja</text>
+<text x="784" y="1130" font-family="monospace" font-size="15" font-weight="normal" fill="#6E7681" text-anchor="middle">claude — listo</text>
+<rect x="0" y="1240" width="1080" height="110" fill="#080B10" opacity="0.6"/>
+<rect x="140" y="1240" width="800" height="1" fill="url(#divGrad)" rx="1" opacity="0.4"/>
+<text x="540" y="1274" font-family="Ubuntu Nerd Font" font-size="18" font-weight="bold" fill="#8B5CF6" text-anchor="middle">#ClaudeCode  #Java  #SpringBoot  #DevTools  #AI</text>
+<text x="540" y="1306" font-family="Ubuntu Nerd Font" font-size="20" font-weight="normal" fill="#8B949E" text-anchor="middle">github.com/untalsanders/dotai</text>
+<text x="540" y="1332" font-family="Ubuntu Nerd Font" font-size="17" font-weight="normal" fill="#6E7681" text-anchor="middle">Configura Claude Code como un Senior Engineer de Java  </text>
+</svg>

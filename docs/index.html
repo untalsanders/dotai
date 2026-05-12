@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="dotai — Configuración centralizada de Claude Code: agentes, comandos, reglas, hooks y skills para proyectos Java 21 + Spring Boot 3." />
+  <meta name="theme-color" content="#0f172a" />
+  <title>dotai · Configuración de Claude Code</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container nav">
+    <a class="brand" href="#top">
+      <span class="brand-mark">◆</span>
+      <span class="brand-name">dotai</span>
+    </a>
+    <nav class="nav-links" aria-label="Navegación principal">
+      <a href="#estructura">Estructura</a>
+      <a href="#agentes">Agentes</a>
+      <a href="#comandos">Comandos</a>
+      <a href="#hooks">Hooks</a>
+      <a href="#reglas">Reglas</a>
+      <a href="#skills">Skills</a>
+      <a href="#infografias">Infografías</a>
+      <a href="#inicio">Empezar</a>
+    </nav>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text">
+        <span class="eyebrow">Dotfiles para Claude Code</span>
+        <h1>Un mismo entorno de Claude<br />en todos tus proyectos.</h1>
+        <p class="lead">
+          <strong>dotai</strong> centraliza los agentes, comandos, reglas, hooks y skills
+          que definen cómo Claude trabaja en tu equipo. Clona, enlaza
+          <code>.claude/</code> y obtén la misma experiencia en cualquier máquina.
+        </p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#inicio">Empezar ahora</a>
+          <a class="btn btn-ghost" href="#infografias">Ver infografías</a>
+        </div>
+        <ul class="stack-chips" aria-label="Stack de referencia">
+          <li>Java 21</li>
+          <li>Spring Boot 3</li>
+          <li>Arquitectura Hexagonal</li>
+          <li>Maven</li>
+          <li>PostgreSQL</li>
+        </ul>
+      </div>
+      <div class="hero-card">
+                <pre class="code-block"><code><span class="c-comment"># 1. Clonar el repositorio</span>
+git clone https://github.com/tu-usuario/dotai.git
+
+<span class="c-comment"># 2. Enlazar a tu proyecto</span>
+ln -s /ruta/a/dotai/.claude /ruta/a/tu-proyecto/.claude
+
+<span class="c-comment"># 3. Abrir Claude Code</span>claude</code>
+                </pre>
+      </div>
+    </div>
+  </section>
+
+  <!-- ESTRUCTURA -->
+  <section id="estructura" class="section">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow eyebrow-amber">Vista general</span>
+        <h2>Estructura del proyecto</h2>
+        <p>Cinco carpetas, una responsabilidad clara para cada una.</p>
+      </header>
+
+      <div class="cards">
+        <a class="card card-violet" href="#agentes">
+          <div class="card-icon">🤖</div>
+          <h3>agents/</h3>
+          <p>Subagentes especializados que el agente principal delega: revisor, debugger, doc-writer…</p>
+        </a>
+        <a class="card card-emerald" href="#comandos">
+          <div class="card-icon">⚡</div>
+          <h3>commands/</h3>
+          <p>Slash commands personalizados (<code>/fix-issue</code>, <code>/pr-review</code>,
+            <code>/deploy</code>).</p>
+        </a>
+        <a class="card card-rose" href="#hooks">
+          <div class="card-icon">🛡️</div>
+          <h3>hooks/</h3>
+          <p>Scripts que se ejecutan automáticamente: pre/post-tool, sesión y pre-commit.</p>
+        </a>
+        <a class="card card-amber" href="#reglas">
+          <div class="card-icon">📐</div>
+          <h3>rules/</h3>
+          <p>Convenciones por dominio: arquitectura, API, base de datos y frontend.</p>
+        </a>
+        <a class="card card-cyan" href="#skills">
+          <div class="card-icon">🧩</div>
+          <h3>skills/</h3>
+          <p>Flujos de trabajo reutilizables para implementar features completas.</p>
+        </a>
+        <div class="card card-slate">
+          <div class="card-icon">📄</div>
+          <h3>CLAUDE.md</h3>
+          <p>Instrucciones globales que Claude lee al inicio de cada conversación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENTES -->
+  <section id="agentes" class="section section-alt">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow eyebrow-violet">Subagentes</span>
+        <h2>Ocho expertos delegables</h2>
+        <p>Cada agente tiene un rol, un modelo y un conjunto acotado de herramientas.</p>
+      </header>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+          <tr>
+            <th>Agente</th>
+            <th>Modelo</th>
+            <th>Herramientas</th>
+            <th>Para qué sirve</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>core-reviewer</code></td>
+            <td><span class="pill pill-violet">sonnet</span></td>
+            <td>Read, Glob, Grep, Bash</td>
+            <td>Revisa diffs antes del merge: arquitectura, seguridad, calidad y cobertura.</td>
+          </tr>
+          <tr>
+            <td><code>debugger</code></td>
+            <td><span class="pill pill-violet">sonnet</span></td>
+            <td>Read, Glob, Grep, Bash</td>
+            <td>Traza la causa raíz de un bug desde los logs hasta el código fuente.</td>
+          </tr>
+          <tr>
+            <td><code>doc-writer</code></td>
+            <td><span class="pill pill-cyan">haiku</span></td>
+            <td>Read, Glob, Grep, Write, Edit, Bash</td>
+            <td>Javadoc, anotaciones OpenAPI y documentación técnica.</td>
+          </tr>
+          <tr>
+            <td><code>explorer</code></td>
+            <td><span class="pill pill-cyan">haiku</span></td>
+            <td>Read, Glob, Grep, Bash</td>
+            <td>Localiza clases, endpoints y traza cadenas de llamadas.</td>
+          </tr>
+          <tr>
+            <td><code>feature-dev</code></td>
+            <td><span class="pill pill-violet">sonnet</span></td>
+            <td>Read, Glob, Grep, Write, Edit, Bash</td>
+            <td>Implementa features completas siguiendo arquitectura hexagonal.</td>
+          </tr>
+          <tr>
+            <td><code>refactorer</code></td>
+            <td><span class="pill pill-violet">sonnet</span></td>
+            <td>Read, Glob, Grep, Write, Edit, Bash</td>
+            <td>Refactoriza sin cambiar comportamiento: SOLID, <code>record</code>, extract method.</td>
+          </tr>
+          <tr>
+            <td><code>security-auditor</code></td>
+            <td><span class="pill pill-violet">sonnet</span></td>
+            <td>Read, Glob, Grep, Bash</td>
+            <td>Audita OWASP Top 10, secrets, IDOR, CORS, Actuator sin protección.</td>
+          </tr>
+          <tr>
+            <td><code>test-writter</code></td>
+            <td><span class="pill pill-violet">sonnet</span></td>
+            <td>Read, Glob, Grep, Write, Edit, Bash</td>
+            <td>Tests unitarios, slices <code>@WebMvcTest</code> e integración con Testcontainers.</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- COMANDOS -->
+  <section id="comandos" class="section">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow eyebrow-emerald">Slash commands</span>
+        <h2>Flujos completos en una sola invocación</h2>
+        <p>Los comandos encapsulan procesos repetitivos. Se invocan con <code>/nombre [argumento]</code>.</p>
+      </header>
+
+      <div class="commands-grid">
+        <article class="command">
+          <header><code class="cmd">/fix-issue 42</code></header>
+          <p>Lee el issue de GitHub, localiza el código afectado, escribe el test que falla, implementa el fix
+            mínimo, corre <code>./mvnw verify</code> y abre el PR.</p>
+        </article>
+        <article class="command">
+          <header><code class="cmd">/pr-review [N]</code></header>
+          <p>Revisa el PR (activo o por número) contra las reglas de arquitectura, API, BD y seguridad;
+            publica el reporte como comentario en GitHub.</p>
+        </article>
+        <article class="command">
+          <header><code class="cmd">/deploy staging</code></header>
+          <p>Valida el branch, corre tests, construye la imagen Docker, despliega con <code>kubectl</code>,
+            verifica el health check y hace rollback automático si algo falla.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOOKS -->
+  <section id="hooks" class="section section-alt">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow eyebrow-rose">Control obligatorio</span>
+        <h2>Hooks que siempre se ejecutan</h2>
+        <p>A diferencia de las instrucciones, los hooks no son opcionales para Claude.</p>
+      </header>
+
+      <div class="table-wrap">
+        <table class="data-table">
+          <thead>
+          <tr>
+            <th>Script</th>
+            <th>Tipo</th>
+            <th>Evento</th>
+            <th>Qué hace</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td><code>PreToolUse.sh</code></td>
+            <td>Claude Code</td>
+            <td>Antes de cada herramienta</td>
+            <td>Bloquea <code>rm -rf</code> críticos, force push a main, <code>git reset --hard</code>, DROP
+              TABLE y sobreescritura de migraciones Flyway.
+            </td>
+          </tr>
+          <tr>
+            <td><code>PostToolUse.sh</code></td>
+            <td>Claude Code</td>
+            <td>Después de cada herramienta</td>
+            <td>Detecta imports de Spring/JPA en <code>domain/</code> y entidades JPA en la capa web.
+              Registra log de auditoría.
+            </td>
+          </tr>
+          <tr>
+            <td><code>SessionSmart.sh</code></td>
+            <td>Claude Code</td>
+            <td>Inicio y fin de sesión</td>
+            <td>Al iniciar muestra branch, archivos sucios, commits sin push y tests fallidos. Al finalizar
+              guarda un resumen.
+            </td>
+          </tr>
+          <tr>
+            <td><code>pre-commit.sh</code></td>
+            <td>Git hook</td>
+            <td><code>git commit</code></td>
+            <td>5 checks: secrets, arquitectura hexagonal, convención Flyway, <code>./mvnw compile</code> y
+              <code>./mvnw test</code>.
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <h4>Códigos de salida</h4>
+        <ul>
+          <li><span class="pill pill-emerald">0</span> Claude procede normalmente.</li>
+          <li><span class="pill pill-amber">1</span> Claude recibe el mensaje como advertencia.</li>
+          <li><span class="pill pill-rose">2</span> Acción bloqueada — Claude no puede continuar.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- REGLAS -->
+  <section id="reglas" class="section">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow eyebrow-amber">Convenciones</span>
+        <h2>Reglas por dominio técnico</h2>
+        <p>Más granulares que <code>CLAUDE.md</code>: cada archivo dicta los patrones de un área concreta.</p>
+      </header>
+
+      <div class="rules-grid">
+        <article class="rule">
+          <h3>architecture.md</h3>
+          <p>Arquitectura hexagonal con diagramas, reglas de dependencia entre capas, patrones DDD tácticos y
+            la tabla SOLID con señales de violación.</p>
+        </article>
+        <article class="rule">
+          <h3>api.md</h3>
+          <p>Diseño de URLs y métodos HTTP, códigos de estado, envelope <code>{data, error, meta}</code>,
+            <code>ProblemDetail</code> RFC 9457, paginación e idempotency keys.</p>
+        </article>
+        <article class="rule">
+          <h3>database.md</h3>
+          <p>Árbol de decisión JPA vs JDBC, soluciones al N+1, formato Flyway, transacciones, HikariCP y
+            features de PostgreSQL.</p>
+        </article>
+        <article class="rule">
+          <h3>frontend.md</h3>
+          <p>CORS por perfil, JWT con refresh token en cookie <code>httpOnly</code>, errores con <code>errors[{field,
+            message}]</code>, SSE vs WebSocket y OpenAPI como contrato.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-alt">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow eyebrow-cyan">Workflows guiados</span>
+        <h2>Skills que guían la implementación</h2>
+        <p>A diferencia de los comandos, las skills aseguran que el código siga las convenciones del
+          proyecto.</p>
+      </header>
+
+      <div class="commands-grid">
+        <article class="command">
+          <header><code class="cmd">/backend &lt;descripcion&gt;</code></header>
+          <p>Implementa una feature completa en 7 fases: explorar → modelar dominio → caso de uso →
+            persistencia con Flyway → adapter web → tests → <code>./mvnw verify</code>.</p>
+        </article>
+        <article class="command">
+          <header><code class="cmd">/frontend &lt;descripcion&gt;</code></header>
+          <p>Diseña el contrato de API: pantallas → endpoints → schemas → errores → filtros y paginación →
+            documentación OpenAPI → tests de contrato.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- INFOGRAFÍAS -->
+  <section id="infografias" class="section">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow eyebrow-violet">Visual</span>
+        <h2>Infografías</h2>
+        <p>Tres vistas para entender el repositorio de un solo vistazo. Haz clic en cualquier imagen para verla a tamaño completo.</p>
+      </header>
+
+      <div class="tabs" role="tablist" aria-label="Infografías">
+        <button class="tab is-active" role="tab" aria-selected="true" data-target="tab-ecosistema">Ecosistema</button>
+        <button class="tab" role="tab" aria-selected="false" data-target="tab-ciclo">Ciclo de vida</button>
+        <button class="tab" role="tab" aria-selected="false" data-target="tab-agentes">Agentes</button>
+      </div>
+
+      <div class="tab-panels">
+        <div id="tab-ecosistema" class="tab-panel is-active" role="tabpanel">
+          <p class="panel-desc">Mapa completo de los componentes de <code>.claude/</code>: agentes, comandos, hooks, reglas y skills.</p>
+          <a class="infographic-link" href="assets/images/ecosistema.svg" target="_blank" rel="noopener">
+            <img src="assets/images/ecosistema.svg" alt="Infografía del ecosistema de dotai" loading="lazy" />
+          </a>
+          <div class="infographic-actions">
+            <a class="btn btn-ghost btn-sm" href="assets/images/ecosistema.svg" target="_blank" rel="noopener">SVG</a>
+            <a class="btn btn-ghost btn-sm" href="assets/images/ecosistema.png" target="_blank" rel="noopener">PNG 4K</a>
+          </div>
+        </div>
+
+        <div id="tab-ciclo" class="tab-panel" role="tabpanel" hidden>
+          <p class="panel-desc">Ciclo de vida de una sesión de Claude Code: del inicio al cierre, con los hooks que se activan en cada paso.</p>
+          <a class="infographic-link" href="assets/images/ciclo_de_vida.png" target="_blank" rel="noopener">
+            <img src="assets/images/ciclo_de_vida.svg" alt="Infografía del ciclo de vida de una sesión" loading="lazy" />
+          </a>
+          <div class="infographic-actions">
+            <a class="btn btn-ghost btn-sm" href="assets/images/ciclo_de_vida.svg" target="_blank" rel="noopener">SVG</a>
+            <a class="btn btn-ghost btn-sm" href="assets/images/ciclo_de_vida.png" target="_blank" rel="noopener">PNG 4K</a>
+          </div>
+        </div>
+
+        <div id="tab-agentes" class="tab-panel" role="tabpanel" hidden>
+          <p class="panel-desc">Los 8 agentes con su modelo, herramientas y proceso paso a paso.</p>
+          <a class="infographic-link" href="assets/images/agentes.png" target="_blank" rel="noopener">
+            <img src="assets/images/agentes.svg" alt="Infografía de los agentes" loading="lazy" />
+          </a>
+          <div class="infographic-actions">
+            <a class="btn btn-ghost btn-sm" href="assets/images/agentes.svg" target="_blank" rel="noopener">SVG</a>
+            <a class="btn btn-ghost btn-sm" href="assets/images/agentes.png" target="_blank" rel="noopener">PNG
+              4K</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INICIO -->
+  <section id="inicio" class="section section-alt">
+    <div class="container">
+      <header class="section-head">
+        <span class="eyebrow eyebrow-emerald">Primeros pasos</span>
+        <h2>Empezar en 4 pasos</h2>
+      </header>
+
+      <ol class="steps">
+        <li>
+          <h3>Clona el repositorio</h3>
+          <pre class="code-block"><code>git clone https://github.com/tu-usuario/dotai.git</code></pre>
+        </li>
+        <li>
+          <h3>Enlaza la configuración a tu proyecto</h3>
+          <pre class="code-block"><code><span class="c-comment"># Opción A — symlink (los cambios en dotai se reflejan automáticamente)</span>
+ln -s /ruta/a/dotai/.claude /ruta/a/tu-proyecto/.claude
+
+<span class="c-comment"># Opción B — copiar (configuración independiente por proyecto)</span>
+cp -r /ruta/a/dotai/.claude /ruta/a/tu-proyecto/.claude</code></pre>
+        </li>
+        <li>
+          <h3>Instala el git hook (opcional)</h3>
+          <pre class="code-block"><code>ln -s /ruta/a/dotai/.claude/hooks/pre-commit.sh .git/hooks/pre-commit
+chmod +x .git/hooks/pre-commit</code></pre>
+        </li>
+        <li>
+          <h3>Abre Claude Code</h3>
+          <pre class="code-block"><code>claude</code></pre>
+          <p>La configuración de <code>.claude/</code> se carga automáticamente.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <div class="brand">
+        <span class="brand-mark">◆</span>
+        <span class="brand-name">dotai</span>
+      </div>
+      <p class="footer-tagline">Configuración centralizada de Claude Code para equipos Java + Spring Boot.</p>
+    </div>
+    <nav aria-label="Enlaces del pie">
+      <h4>Documentación</h4>
+      <ul>
+        <li><a href="#estructura">Estructura</a></li>
+        <li><a href="#agentes">Agentes</a></li>
+        <li><a href="#hooks">Hooks</a></li>
+        <li><a href="#infografias">Infografías</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Recursos">
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="https://claude.ai/code" target="_blank" rel="noopener">Claude Code</a></li>
+        <li><a href="https://www.conventionalcommits.org/" target="_blank" rel="noopener">Conventional Commits</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="container footer-bottom">
+    <small>© <span id="year"></span> dotai · Hecho para que Claude trabaje igual en todos tus proyectos.</small>
+  </div>
+</footer>
+
+<script src="assets/js/script.js" defer></script>
+</body>
+</html>
