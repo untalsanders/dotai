@@ -8,64 +8,75 @@ La idea es sencilla: clonar este repo, enlazar la carpeta `.claude/` al proyecto
 
 ---
 
+## Documentación
+
+La documentación del proyecto está publicada en GitHub Pages: **[https://untalsanders.github.io/dotai/](https://untalsanders.github.io/dotai/)**
+
+---
+
 ## Estructura del proyecto
 
 ```
 dotai/
-├── .claude/
-│   ├── CLAUDE.md                   # Instrucciones y contexto global para Claude
-│   ├── settings.json               # Permisos, variables de entorno y configuración del harness
-│   │
-│   ├── agents/                     # Subagentes especializados — cada uno es un experto delegable
-│   │   ├── core-reviewer.md        # Revisa código antes del merge (arquitectura, seguridad, tests)
-│   │   ├── debugger.md             # Diagnostica bugs trazando la causa raíz
-│   │   ├── doc-writer.md           # Genera Javadoc, anotaciones OpenAPI y documentación técnica
-│   │   ├── explorer.md             # Localiza clases, métodos, endpoints y flujos en el codebase
-│   │   ├── feature-dev.md          # Implementa features completas siguiendo arquitectura hexagonal
-│   │   ├── refactorer.md           # Mejora la estructura interna sin cambiar el comportamiento
-│   │   ├── security-auditor.md     # Audita vulnerabilidades OWASP, secrets y configuración insegura
-│   │   └── test-writter.md         # Escribe suites de tests unitarios, slice e integración
-│   │
-│   ├── commands/                   # Slash commands personalizados invocables con /nombre
-│   │   ├── fix-issue.md            # /fix-issue <N> — corrige un issue de GitHub de punta a punta
-│   │   ├── pr-review.md            # /pr-review [N] — revisa un PR y publica un reporte estructurado
-│   │   └── deploy.md               # /deploy <entorno> — construye, valida y despliega la aplicación
-│   │
-│   ├── hooks/                      # Scripts ejecutados automáticamente por el harness de Claude Code
-│   │   ├── PreToolUse.sh           # Guarda antes de cada herramienta (bloquea destructivos)
-│   │   ├── PostToolUse.sh          # Audita y valida arquitectura después de cada herramienta
-│   │   ├── SessionSmart.sh         # Contexto al inicio y resumen al fin de cada sesión
-│   │   └── pre-commit.sh           # Git hook: compile → secrets → arquitectura → tests
-│   │
-│   ├── rules/                      # Reglas por dominio técnico que Claude aplica al generar código
-│   │   ├── architecture.md         # Arquitectura hexagonal, SOLID, patrones de dominio
-│   │   ├── api.md                  # Diseño REST, envelope de respuesta, errores, paginación
-│   │   ├── database.md             # JPA vs JDBC, Flyway, queries, transacciones, HikariCP
-│   │   └── frontend.md             # Contrato backend-frontend: CORS, JWT, schemas, OpenAPI
-│   │
-│   └── skills/                     # Flujos de trabajo reutilizables invocables como /nombre
-│       ├── SKILL.md                # Plantilla para crear nuevas skills
-│       ├── context.md              # Contexto compartido inyectado en todas las skills
-│       ├── backend/
-│       │   └── SKILL.md            # /backend — implementa una feature de backend completa
-│       └── frontend/
-│           └── SKILL.md            # /frontend — diseña el contrato de API para el frontend
+├── CLAUDE.md                       # Instrucciones y contexto global para Claude
+├── settings.json                   # Permisos, variables de entorno y configuración del harness
 │
-├── infographics/                   # Infografías del proyecto en SVG y PNG 4K
-│   ├── ecosistema.svg / .png       # Mapa completo de todos los componentes
-│   ├── ciclo_de_vida.svg / .png    # Ciclo de vida de una sesión de Claude Code
-│   ├── agentes.svg / .png          # Los 8 agentes con modelo, herramientas y proceso
-│   ├── gen_infografia1.py          # Script generador — ecosistema
-│   ├── gen_infografia2.py          # Script generador — ciclo de vida
-│   └── gen_infografia3.py          # Script generador — agentes
+├── agents/                         # Subagentes especializados — cada uno es un experto delegable
+│   ├── core-reviewer.md            # Revisa código antes del merge (arquitectura, seguridad, tests)
+│   ├── debugger.md                 # Diagnostica bugs trazando la causa raíz
+│   ├── doc-writer.md               # Genera Javadoc, anotaciones OpenAPI y documentación técnica
+│   ├── explorer.md                 # Localiza clases, métodos, endpoints y flujos en el codebase
+│   ├── feature-dev.md              # Implementa features completas siguiendo arquitectura hexagonal
+│   ├── refactorer.md               # Mejora la estructura interna sin cambiar el comportamiento
+│   ├── security-auditor.md         # Audita vulnerabilidades OWASP, secrets y configuración insegura
+│   └── test-writter.md             # Escribe suites de tests unitarios, slice e integración
 │
+├── commands/                       # Slash commands personalizados invocables con /nombre
+│   ├── fix-issue.md                # /fix-issue <N> — corrige un issue de GitHub de punta a punta
+│   ├── pr-review.md                # /pr-review [N] — revisa un PR y publica un reporte estructurado
+│   └── deploy.md                   # /deploy <entorno> — construye, valida y despliega la aplicación
+│
+├── docs/                           # Sitio de documentación (publicado en GitHub Pages)
+│   ├── assets/
+│   │   ├── css/
+│   │   ├── images/
+│   │   └── js/
+│   └── index.html
+│
+├── hooks/                          # Scripts ejecutados automáticamente por el harness de Claude Code
+│   ├── PreToolUse.sh               # Bloquea operaciones destructivas antes de cada herramienta
+│   ├── PostToolUse.sh              # Audita y valida arquitectura después de cada herramienta
+│   ├── SessionSmart.sh             # Contexto al inicio y resumen al fin de cada sesión
+│   └── pre-commit.sh               # Git hook: compile → secrets → arquitectura → tests
+│
+├── rules/                          # Reglas por dominio técnico que Claude aplica al generar código
+│   ├── architecture.md             # Arquitectura hexagonal, SOLID, patrones de dominio
+│   ├── api.md                      # Diseño REST, envelope de respuesta, errores, paginación
+│   ├── database.md                 # JPA vs JDBC, Flyway, queries, transacciones, HikariCP
+│   └── frontend.md                 # Contrato backend-frontend: CORS, JWT, schemas, OpenAPI
+│
+├── scripts/                        # Scripts de generación de infografías
+│   ├── gen_infografia1.py          # Genera infografía del ecosistema
+│   ├── gen_infografia2.py          # Genera infografía del ciclo de vida
+│   ├── gen_infografia3.py          # Genera infografía de los agentes
+│   └── gen_instagram.py            # Genera assets para redes sociales
+│
+├── skills/                         # Flujos de trabajo reutilizables invocables como /nombre
+│   ├── SKILL.md                    # Plantilla para crear nuevas skills
+│   ├── context.md                  # Contexto compartido inyectado en todas las skills
+│   ├── backend/
+│   │   └── SKILL.md                # /backend — implementa una feature de backend completa
+│   └── frontend/
+│       └── SKILL.md                # /frontend — diseña el contrato de API para el frontend
+│
+├── .editorconfig
 ├── .gitignore
 └── README.md
 ```
 
 ---
 
-## `.claude/CLAUDE.md`
+## `CLAUDE.md`
 
 Archivo de instrucciones globales que Claude lee al inicio de cada conversación. Define el rol del asistente, el stack tecnológico, la arquitectura esperada, las convenciones de código, las reglas de API, persistencia, seguridad, testing, rendimiento y una lista explícita de antipatrones a evitar.
 
@@ -73,7 +84,7 @@ Es el punto de entrada de toda la configuración. Si un comportamiento debe apli
 
 ---
 
-## `.claude/settings.json`
+## `settings.json`
 
 Controla el comportamiento del harness de Claude Code:
 
@@ -85,7 +96,7 @@ Es el archivo que hace que los hooks se ejecuten automáticamente.
 
 ---
 
-## `.claude/agents/`
+## `agents/`
 
 Los agentes son subinstancias especializadas de Claude que el agente principal puede invocar para delegar tareas concretas. Cada archivo `.md` define el rol, las herramientas disponibles (`tools`), el modelo a usar y el proceso paso a paso que debe seguir.
 
@@ -126,7 +137,7 @@ Paso 2 — Verificar arquitectura hexagonal ...
 
 ---
 
-## `.claude/commands/`
+## `commands/`
 
 Los comandos son slash commands personalizados invocados escribiendo `/nombre [argumento]` en Claude Code. Encapsulan flujos de trabajo completos y repetitivos. Usan `$ARGUMENTS` para recibir parámetros del usuario.
 
@@ -158,7 +169,7 @@ gh issue view $ARGUMENTS
 
 ---
 
-## `.claude/hooks/`
+## `hooks/`
 
 Los hooks son scripts de shell que el harness de Claude Code ejecuta automáticamente cuando ocurre un evento. A diferencia de las instrucciones en `CLAUDE.md` (que Claude puede o no seguir), los hooks **siempre se ejecutan** — son la capa de control obligatorio.
 
@@ -198,7 +209,7 @@ chmod +x .git/hooks/pre-commit
 
 ---
 
-## `.claude/rules/`
+## `rules/`
 
 Las reglas son instrucciones específicas por dominio técnico. Son más granulares que `CLAUDE.md`: en lugar de definir el comportamiento general, cada archivo dicta las convenciones, patrones y restricciones de un área concreta. Claude las carga cuando trabaja en código de ese dominio.
 
@@ -211,7 +222,7 @@ Las reglas son instrucciones específicas por dominio técnico. Son más granula
 
 ---
 
-## `.claude/skills/`
+## `skills/`
 
 Las skills son flujos de trabajo reutilizables invocados como slash commands. A diferencia de los `commands/` (que automatizan tareas operativas), las skills guían la implementación de código siguiendo las convenciones del proyecto.
 
@@ -239,17 +250,17 @@ git clone https://github.com/tu-usuario/dotai.git
 
 ```bash
 # Opción A — symlink (los cambios en dotai se reflejan automáticamente)
-ln -s /ruta/a/dotai/.claude /ruta/a/tu-proyecto/.claude
+ln -s /ruta/a/dotai /ruta/a/tu-proyecto/.claude
 
 # Opción B — copiar (configuración independiente por proyecto)
-cp -r /ruta/a/dotai/.claude /ruta/a/tu-proyecto/.claude
+cp -r /ruta/a/dotai /ruta/a/tu-proyecto/.claude
 ```
 
 ### 3. Instalar el git hook (opcional pero recomendado)
 
 ```bash
 cd /ruta/a/tu-proyecto
-ln -s /ruta/a/dotai/.claude/hooks/pre-commit.sh .git/hooks/pre-commit
+ln -s /ruta/a/dotai/hooks/pre-commit.sh .git/hooks/pre-commit
 chmod +x .git/hooks/pre-commit
 ```
 
@@ -259,7 +270,7 @@ chmod +x .git/hooks/pre-commit
 claude
 ```
 
-La configuración de `.claude/` se carga automáticamente. Los hooks se activan desde `settings.json`.
+La configuración se carga automáticamente desde `.claude/`. Los hooks se activan desde `settings.json`.
 
 ### 5. Verificar que todo funciona
 
@@ -282,6 +293,7 @@ Este repositorio está configurado para un stack Java 21 + Spring Boot 3. Para a
 3. **`hooks/pre-commit.sh`** — Reemplaza `./mvnw compile` y `./mvnw test` con los comandos de tu build tool.
 4. **`skills/`** — Crea skills específicas para los flujos de tu proyecto.
 5. **`agents/`** — Ajusta los modelos y herramientas según las necesidades de cada agente.
+6. **`docs/`** — Actualiza el sitio de documentación para reflejar tu stack y convenciones.
 
 ---
 
