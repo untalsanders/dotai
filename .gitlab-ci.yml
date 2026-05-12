@@ -1,0 +1,19 @@
+stages:
+  - deploy
+
+pages:
+  stage: deploy
+  image: alpine:latest
+  script:
+    - mkdir -p public
+    - cp -r docs/ public/
+  artifacts:
+    paths:
+      - public
+    rules:
+      - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
+        changes:
+          - docs/**
+          - .gitlab-ci.yml
+
+      - if: $CI_PIPELINE_SOURCE == "web"
