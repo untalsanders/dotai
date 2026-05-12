@@ -1,4 +1,8 @@
+### Intellij IDEA ###
 .idea/
 *.iml
 *.ipr
 *.iws
+
+### AI Settings ###
+**/*.local.json
